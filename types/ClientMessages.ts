@@ -1,4 +1,3 @@
-import { BlogReply } from './../app/dashboard/order-management/ambulance/Types/Types';
 export interface ClientMessage {
   id: string;
   name: string;
@@ -15,7 +14,6 @@ export interface ApiResponse<T> {
   data: T;
   error: string | null;
 }
-
 
 export interface PaginatedResponse<T> {
   clientTestimonial: T[];
