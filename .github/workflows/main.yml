@@ -1,0 +1,25 @@
+name: Nextjs CI
+
+on:
+  push:
+    branches: [ "dev" ] # change the branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build the Docker image
+        uses: actions/checkout@v4
+      - name: Create env file
+        run: |
+          echo "NEXT_PUBLIC_API_BASE_URL"=${{secrets.NEXT_PUBLIC_API_BASE_URL}} >> .env
+          echo "NEXT_PUBLIC_GOOGLE_MAP_API_KEY"=${{secrets.NEXT_PUBLIC_GOOGLE_MAP_API_KEY}} >> .env
+          echo "NEXT_AUTH_SECRET"=${{secrets.NEXT_AUTH_SECRET}} >> .env
+      - name: Build the Docker image
+        run: |
+          docker build . -t ghcr.io/tech-analytica-limited/ambufast-admin:latest
+      - name: Push the image to github org packages
+        run: |
+          docker login --username ${{ secrets.USER_GITHUB_NAME }} --password ${{ secrets.USER_GITHUB_TOKEN }} ghcr.io
+          docker push ghcr.io/tech-analytica-limited/ambufast-admin:latest

@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "message": "Notifications fetched successfully!",
+  "data": {
+    "notifications": [
+      {
+        "id": "1",
+        "avatar": "https://randomuser.me/api/portraits/women/1.jpg",
+        "name": "Dennisa Nedry",
+        "description": "requested access to Isla Nublar SOC2 compliance report",
+        "time": "Last Wednesday at 9:42 AM",
+        "read": false
+      },
+      {
+        "id": "2",
+        "avatar": "https://randomuser.me/api/portraits/men/2.jpg",
+        "name": "John Hammond",
+        "description": "approved your request for Dinosaur Park project",
+        "time": "Yesterday at 3:15 PM",
+        "read": true
+      },
+      {
+        "id": "3",
+        "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
+        "name": "Ellie Sattler",
+        "description": "shared a report on Jurassic Park plant species analysis",
+        "time": "Today at 10:30 AM",
+        "read": false
+      },
+      {
+        "id": "4",
+        "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
+        "name": "Ian Malcolm",
+        "description": "commented on your mathematical models",
+        "time": "Last Friday at 2:45 PM",
+        "read": true
+      },
+      {
+        "id": "5",
+        "avatar": "https://randomuser.me/api/portraits/women/5.jpg",
+        "name": "Sarah Harding",
+        "description": "added a new draft to your shared research folder",
+        "time": "This morning at 8:15 AM",
+        "read": false
+      }
+    ],
+    "totalNotifications": 6,
+    "totalPages": 1,
+    "currentPage": 1,
+    "limit": 10,
+    "hasNext": false,
+    "hasPrev": false
+  },
+  "error": null
+}

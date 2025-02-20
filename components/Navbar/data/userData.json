@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "message": "User data fetched successfully!",
+  "data": {
+    "userId": "1sss51515210",
+    "name": "Taufiqul Islam",
+    "role": "Super Admin",
+    "img": "/images/userimg.png"
+  },
+  "error": null
+}

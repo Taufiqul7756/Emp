@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+
+    /* full sidebar width */
+    --sidebar-width: 300px;
+    /* collapsed sidebar width */
+    --collapsed-sidebar-width: 92px;
+  }
+}
+
+.tox .tox-toolbar__group {
+  pointer-events: auto;
+}
+
+.no-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 4px; /* Scrollbar width */
+  height: 3px; /* Horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e6e6e9; /* Thumb color */
+  border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bfc1c7; /* Darker thumb on hover */
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff; /* Track color */
+  border-radius: 4px; /* Rounded corners for the track */
+}
+
+.no-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #888 transparent; /* Thumb color and track color */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  width: 3px; /* Smaller scrollbar for webkit browsers */
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker thumb on hover */
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+@layer base {
+  html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+}
+
+
+/* Remove autofill background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* -webkit-box-shadow: 0 0 0 30px hsl(var(--background)) inset !important; */
+  -webkit-text-fill-color: black !important; /* Set text color */
+  -webkit-text-fill-color: hsl(var(--foreground)) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Ensure text color remains consistent when autofilled */
+input:-webkit-autofill {
+  caret-color: black !important;
+}
+
+/* For Firefox */
+input:autofill {
+  /* background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important; */
+  color: black !important;
+  filter: none;
+}
+
+/* For Firefox */
+input:autofill {
+  caret-color: black !important;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: black;
+  background: lightskyblue;
+}
+
+::selection {
+  color: black;
+  background: lightskyblue;
+}
+
+
+
+@keyframes border-highlight {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #F44336;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+.animate-border-highlight {
+  border: 1px solid transparent;
+  animation: border-highlight 2s ease-in-out; /* Duration and easing */
+}
+
+.a4-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  margin: 0 auto;
+}
+
+@media print {
+  .a4-page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
