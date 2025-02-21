@@ -7,32 +7,32 @@ const Footer: React.FC = () => {
     <footer className="hidden items-center justify-between bg-[#F5F7FA] px-9 py-4 md:flex">
       <div>
         <Link
-          href="https://ambufast.com"
+          href="https://www.brotecs.com/"
           className="text-sm font-normal leading-5 text-basicColor md:text-xs"
           target="_blank"
         >
           <span className="text-[15px] text-primary-500">
             {" "}
-            © {new Date().getFullYear()} - AmbuFast
+            © {new Date().getFullYear()} -Bro Tecs
           </span>
         </Link>
       </div>
       <div className="">
         <Link
-          href="https://techanalyticaltd.com/"
+          href="https://www.brotecs.com/"
           className="text-sm font-normal leading-5 text-basicColor md:text-xs"
           target="_blank"
         >
           {" "}
           <span className="text-[15px] text-primary-500">
-            Powered By:- Tech Analytica Limited.
+            Powered By:- Brotecs Technologies.
           </span>
         </Link>
       </div>
       <div className="flex items-center text-sm font-normal leading-5 md:text-xs">
         <Link
           target="_blank"
-          href="https://ambufast.com/privacy-policy"
+          href="https://www.brotecs.com/privacy-policy/"
           className="text-[15px]"
         >
           Privacy Policy
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
         <Dot className="" />
         <Link
           target="_blank"
-          href="https://ambufast.com/about"
+          href="https://www.brotecs.com/terms-of-use/"
           className="text-[15px]"
         >
           FAQs
