@@ -104,7 +104,9 @@ export default function Navbar({ setIsLoggedIn }: NavbarProps) {
 
       {/* Notifications, Settings, and Profile */}
       <div className="flex items-center justify-center gap-10">
-        <ThemeToggle />
+        <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-black dark:bg-slate-300">
+          <ThemeToggle />
+        </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-black dark:bg-slate-300">

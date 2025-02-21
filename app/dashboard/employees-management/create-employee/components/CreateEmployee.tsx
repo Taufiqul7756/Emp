@@ -275,7 +275,9 @@ export default function CreateEmployee() {
               name="fullName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Full Name*</FormLabel>
+                  <FormLabel>
+                    Full Name <span className="text-red-500">*</span>{" "}
+                  </FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Enter the name"
@@ -283,7 +285,7 @@ export default function CreateEmployee() {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
@@ -294,7 +296,9 @@ export default function CreateEmployee() {
               name="phoneNumber"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Phone Number*</FormLabel>
+                  <FormLabel>
+                    Phone Number<span className="text-red-500">*</span>{" "}
+                  </FormLabel>
                   <FormControl>
                     <Input
                       className="dark:border-none dark:bg-white"
@@ -302,7 +306,7 @@ export default function CreateEmployee() {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
@@ -315,7 +319,9 @@ export default function CreateEmployee() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email*</FormLabel>
+                  <FormLabel>
+                    Email <span className="text-red-500">*</span>
+                  </FormLabel>
                   <FormControl>
                     <Input
                       className="dark:border-none dark:bg-white"
@@ -323,7 +329,7 @@ export default function CreateEmployee() {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
@@ -334,7 +340,7 @@ export default function CreateEmployee() {
               name="Profile.gender"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Gender*</FormLabel>
+                  <FormLabel>Gender</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -371,7 +377,7 @@ export default function CreateEmployee() {
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-red-500" />
               </FormItem>
             )}
           />
@@ -434,7 +440,9 @@ export default function CreateEmployee() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password*</FormLabel>
+                  <FormLabel>
+                    Password <span className="text-red-500">*</span>
+                  </FormLabel>
                   <FormControl>
                     <div className="relative">
                       <Input
@@ -452,7 +460,7 @@ export default function CreateEmployee() {
                       </Button>
                     </div>
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
@@ -463,7 +471,9 @@ export default function CreateEmployee() {
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Confirm Password*</FormLabel>
+                  <FormLabel>
+                    Confirm Password <span className="text-red-500">*</span>
+                  </FormLabel>
                   <FormControl>
                     <div className="relative">
                       <Input
@@ -481,7 +491,7 @@ export default function CreateEmployee() {
                       </Button>
                     </div>
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
