@@ -71,7 +71,7 @@ const ViewUsersDetailsSheet: React.FC<ViewProps> = ({ phoneNumber, id }) => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <div>
+        <div className="cursor-pointer rounded-lg border px-4 py-2 hover:bg-slate-200 dark:hover:bg-slate-400">
           {/* <IoIosEye className="h-8 w-8 text-gray-600" /> */}
           View
         </div>

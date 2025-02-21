@@ -96,7 +96,7 @@ const EmployeesWrapper = () => {
           <div className="mt-6 flex items-center justify-between">
             {/* Items Per Page */}
             <div className="flex items-center space-x-3 pr-8">
-              <span className="text-[13px] font-normal leading-[15.6px]">
+              <span className="text-[16px] font-normal leading-[15.6px] dark:text-white">
                 Items per page:
               </span>
               <select
@@ -104,7 +104,7 @@ const EmployeesWrapper = () => {
                 onChange={(e) =>
                   handleRowsPerPageChange(Number(e.target.value))
                 }
-                className="rounded-md border bg-white px-3 py-2"
+                className="rounded-md border bg-white px-3 py-2 dark:bg-slate-300"
                 disabled={isLoading} // Disable while loading
               >
                 {[5, 10, 20].map((size) => (
@@ -122,10 +122,11 @@ const EmployeesWrapper = () => {
                 size="sm"
                 onClick={() => handlePageChange(page - 1)}
                 disabled={!userData?.hasPrev || isLoading}
+                className="dark:bg-slate-400 dark:text-white"
               >
                 <FaAngleLeft />
               </Button>
-              <div className="text-sm font-medium">
+              <div className="text-sm font-medium dark:text-white">
                 Page {page} of {totalPages}
               </div>
               <Button
@@ -133,6 +134,7 @@ const EmployeesWrapper = () => {
                 size="sm"
                 onClick={() => handlePageChange(page + 1)}
                 disabled={!userData?.hasNext || isLoading}
+                className="dark:bg-slate-400 dark:text-white"
               >
                 <FaAngleRight />
               </Button>
