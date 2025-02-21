@@ -23,7 +23,7 @@ interface Employee {
 
 const CardEmployee: React.FC<{ employee: Employee }> = ({ employee }) => {
   return (
-    <Card className="w-80">
+    <Card className="w-70">
       <CardHeader className="flex items-center">
         <img
           src={employee.imageUrl || "/default-avatar.png"}
@@ -33,7 +33,9 @@ const CardEmployee: React.FC<{ employee: Employee }> = ({ employee }) => {
       </CardHeader>
       <CardContent>
         <CardTitle>{employee.fullName}</CardTitle>
-        <CardDescription>Email: {employee.email}</CardDescription>
+        <CardDescription className="overflow-hidden truncate text-ellipsis break-words text-gray-600 md:text-sm">
+          Email: {employee.email}
+        </CardDescription>
         <CardDescription>Phone: {employee.phoneNumber}</CardDescription>
         <CardDescription>Role: {employee.role}</CardDescription>
         <CardDescription>Status: {employee.status}</CardDescription>
