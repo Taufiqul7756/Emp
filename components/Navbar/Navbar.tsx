@@ -33,6 +33,7 @@ import { get } from "@/lib/api/handlers";
 import { ApiResponse, UserProfile } from "./NavBarTypes";
 import { useQuery } from "@tanstack/react-query";
 import logo from "../../public/BroTecs-Logo.webp";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavbarProps {
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
@@ -93,7 +94,7 @@ export default function Navbar({ setIsLoggedIn }: NavbarProps) {
   });
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b-[1px] border-[#D4D5D9] bg-white px-12 py-4">
+    <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b-[1px] border-[#D4D5D9] bg-white px-12 py-4 dark:bg-slate-400">
       {/* LOGO */}
       <div className="flex items-center">
         <Link href="/dashboard">
@@ -103,9 +104,10 @@ export default function Navbar({ setIsLoggedIn }: NavbarProps) {
 
       {/* Notifications, Settings, and Profile */}
       <div className="flex items-center justify-center gap-10">
+        <ThemeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-black">
+            <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-black dark:bg-slate-300">
               <FaBell size={20} />
             </div>
           </DropdownMenuTrigger>
@@ -117,7 +119,7 @@ export default function Navbar({ setIsLoggedIn }: NavbarProps) {
 
         <Link
           href="/dashboard/settings"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-black"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-black dark:bg-slate-300"
         >
           <IoSettings size={20} />
         </Link>
@@ -156,10 +158,10 @@ export default function Navbar({ setIsLoggedIn }: NavbarProps) {
                   )}
                   {/* Name and Role */}
                   <div className="space-y-1">
-                    <p className="text-sm font-semibold text-gray-900">
+                    <p className="text-base font-semibold text-gray-900 dark:text-white">
                       {session?.user?.name}
                     </p>
-                    <p className="text-xs text-primary-500">
+                    <p className="text-xs text-primary-500 dark:text-slate-800">
                       {session?.user?.role}
                     </p>
                   </div>
@@ -167,14 +169,18 @@ export default function Navbar({ setIsLoggedIn }: NavbarProps) {
               )}
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="py-2" side="bottom" align="end">
+          <DropdownMenuContent
+            className="py-2 dark:bg-slate-400 dark:hover:bg-slate-300"
+            side="bottom"
+            align="end"
+          >
             <DropdownMenuItem
               // onClick={() => setIsDialogOpen(true)}
               // onClick={handleSignOut}
               onClick={() => {
                 setIsDialogOpen(true);
               }}
-              className="text-md flex cursor-pointer items-center justify-center gap-2 font-semibold text-primary-500"
+              className="text-md flex cursor-pointer items-center justify-center gap-2 font-semibold text-primary-500 dark:text-slate-800 dark:hover:bg-slate-300"
             >
               <LiaSignOutAltSolid size={20} />
               Sign Out
@@ -184,10 +190,10 @@ export default function Navbar({ setIsLoggedIn }: NavbarProps) {
 
         {/* Confirm sign out notifications dialog -  not used now*/}
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent>
+          <DialogContent className="dark:bg-slate-300">
             <DialogHeader>
               <DialogTitle>Confirm sign out</DialogTitle>
-              <DialogDescription>
+              <DialogDescription className="dark:text-slate-700">
                 Are you sure you want to sign out?
               </DialogDescription>
             </DialogHeader>
@@ -195,7 +201,7 @@ export default function Navbar({ setIsLoggedIn }: NavbarProps) {
               <form action={signOutHandler}>
                 <button
                   onClick={handleLogout}
-                  className="rounded-lg bg-red-500 px-4 py-2 text-white"
+                  className="rounded-lg bg-red-500 px-4 py-2 text-white dark:bg-slate-700 dark:hover:bg-slate-400"
                 >
                   Confirm
                 </button>

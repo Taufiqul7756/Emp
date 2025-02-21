@@ -34,7 +34,7 @@ export default function LayoutProvider({ children }: LayoutProviderProps) {
             <SideNavbar isCollapsed={isCollapsed} onCollapse={setIsCollapsed} />
             <motion.div
               className={cn(
-                "flex-grow flex flex-col min-h-screen w-full bg-[#F7F8F8]"
+                "flex min-h-screen w-full flex-grow flex-col bg-[#F7F8F8]",
               )}
               initial={false}
               animate={{
@@ -44,7 +44,7 @@ export default function LayoutProvider({ children }: LayoutProviderProps) {
               }}
               transition={{ duration: 0.3 }}
             >
-              <div className="flex-grow pb-5 pt-16 mt-16 w-full bg-[#F5F7FA] ">
+              <div className="mt-16 w-full flex-grow bg-[#F5F7FA] pb-5 pt-16 dark:bg-slate-400">
                 {children}
               </div>
               <Footer />

@@ -226,10 +226,11 @@ export default function CreateEmployee() {
   };
 
   return (
-    <div className="m-4 space-y-4 rounded-sm bg-white p-4 pt-2">
+    <div className="m-4 space-y-4 rounded-sm bg-white p-4 pt-2 dark:bg-slate-300">
       <Button
         variant="ghost"
         onClick={() => router.push("/dashboard/employees-management")}
+        className="dark:hover:bg-slate-400"
       >
         <ArrowLeft className="mr-2 h-4 w-4" /> Back
       </Button>
@@ -276,7 +277,11 @@ export default function CreateEmployee() {
                 <FormItem>
                   <FormLabel>Full Name*</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter the name" {...field} />
+                    <Input
+                      placeholder="Enter the name"
+                      className="dark:border-none dark:bg-white"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -291,7 +296,11 @@ export default function CreateEmployee() {
                 <FormItem>
                   <FormLabel>Phone Number*</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter Phone Number" {...field} />
+                    <Input
+                      className="dark:border-none dark:bg-white"
+                      placeholder="Enter Phone Number"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -308,7 +317,11 @@ export default function CreateEmployee() {
                 <FormItem>
                   <FormLabel>Email*</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter Email" {...field} />
+                    <Input
+                      className="dark:border-none dark:bg-white"
+                      placeholder="Enter Email"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -327,11 +340,11 @@ export default function CreateEmployee() {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="dark:bg-slate-400 dark:text-white">
                         <SelectValue placeholder="Choose" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="dark:bg-slate-400 dark:text-white">
                       <SelectItem value="male">Male</SelectItem>
                       <SelectItem value="female">Female</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
@@ -352,7 +365,11 @@ export default function CreateEmployee() {
               <FormItem>
                 <FormLabel>Address Line 1</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Address Line 1" {...field} />
+                  <Input
+                    className="dark:border-none dark:bg-white"
+                    placeholder="Enter Address Line 1"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -365,7 +382,11 @@ export default function CreateEmployee() {
               <FormItem>
                 <FormLabel>City</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter City" {...field} />
+                  <Input
+                    className="dark:border-none dark:bg-white"
+                    placeholder="Enter City"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -378,7 +399,11 @@ export default function CreateEmployee() {
               <FormItem>
                 <FormLabel>Country</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Country" {...field} />
+                  <Input
+                    className="dark:border-none dark:bg-white"
+                    placeholder="Enter Country"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -391,7 +416,11 @@ export default function CreateEmployee() {
               <FormItem>
                 <FormLabel>Zipcode</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Zipcode" {...field} />
+                  <Input
+                    className="dark:border-none dark:bg-white"
+                    placeholder="Enter Zipcode"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -412,7 +441,7 @@ export default function CreateEmployee() {
                         type={viewsPassword ? "text" : "password"}
                         placeholder="Enter password"
                         {...field}
-                        className="pr-10"
+                        className="pr-10 dark:border-none dark:bg-white"
                       />
                       <Button
                         type="button"
@@ -441,7 +470,7 @@ export default function CreateEmployee() {
                         type={viewsConPassword ? "text" : "password"}
                         placeholder="Confirm password"
                         {...field}
-                        className="pr-10"
+                        className="pr-10 dark:border-none dark:bg-white"
                       />
                       <Button
                         type="button"
@@ -470,11 +499,11 @@ export default function CreateEmployee() {
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="dark:bg-slate-400 dark:text-white">
                       <SelectValue placeholder="Choose" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className="dark:bg-slate-400 dark:text-white">
                     <SelectItem value="ACTIVE">ACTIVE</SelectItem>
                     <SelectItem value="INACTIVE">INACTIVE</SelectItem>
                     <SelectItem value="SUSPENDED">SUSPENDED</SelectItem>
@@ -486,12 +515,18 @@ export default function CreateEmployee() {
           />
 
           <div className="flex justify-between">
-            <Button type="button" variant="outline" onClick={handleBackAdmin}>
+            <Button
+              type="button"
+              variant="outline"
+              className="dark:bg-slate-400 dark:text-white"
+              onClick={handleBackAdmin}
+            >
               Cancel
             </Button>
             <Button
               type="submit"
-              className="rounded-lg bg-primary-500 text-white"
+              variant="outline"
+              className="rounded-lg bg-primary-500 text-white dark:bg-slate-400"
             >
               Create
             </Button>

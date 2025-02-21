@@ -20,6 +20,6 @@ export const useThemeStore = create<ThemeStore>()(
     {
       name: "theme-storage",
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 );
