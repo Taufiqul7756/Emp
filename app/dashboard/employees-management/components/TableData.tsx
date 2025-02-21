@@ -253,60 +253,6 @@ export const TableData: React.FC<TableDataProps> = ({
     }
   };
 
-  const handleArchiveDelete = async () => {
-    setShownProfileDelete(false);
-    if (shownClientDelete) {
-      try {
-        await del(`/users/user/other/${shownClientDelete}?force=0`, {
-          Authorization: `Bearer ${session?.accessToken ?? ""}`,
-        });
-        toast.success("successfully User deleted archived.");
-        queryClient.invalidateQueries({
-          queryKey: ["userData", page, rowsPerPage],
-        });
-        refetch();
-      } catch (err) {
-        // console.error("Error deleting user:", err);
-        toast.error("Failed to delete user.");
-      }
-    }
-  };
-
-  // const handleEditeData = (id: string) => {
-  //   router.push('/dashboard/users-management/call-operator/update-call-operator')
-  // };
-
-  const togglePermission = (permissionId: string) => {
-    setSelectedPermissions((current) =>
-      current.includes(permissionId)
-        ? current.filter((id) => id !== permissionId)
-        : [...current, permissionId],
-    );
-  };
-
-  const handleViewClient = async (phoneNumber: number) => {
-    setShownProfile(true);
-    let response;
-    try {
-      response = await get(`/users/user/other/${phoneNumber}`, {
-        Authorization: `Bearer ${session?.accessToken ?? ""}`,
-      });
-      setSingleClientDetails((response as ApiResponse<User>).data);
-      // console.log(response);
-      // toast.success("User details fetched successfully.");
-    } catch (err) {
-      toast.error(
-        err instanceof AxiosError && err.response?.data?.message
-          ? `Error: ${err.response.data.message}`
-          : "Failed to fetch user details.",
-      );
-    }
-  };
-
-  const toggleAllPermissions = (checked: boolean) => {
-    setSelectedPermissions(checked ? permissions.map((p) => p.id) : []);
-  };
-
   // ----------Input field search data section start from here----------
   const handleSearch = async (search: string) => {
     try {

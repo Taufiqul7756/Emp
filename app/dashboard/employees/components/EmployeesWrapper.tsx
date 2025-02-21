@@ -8,6 +8,7 @@ import CardEmployee from "./CardEmployee";
 import Button from "@/components/Button";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import Loading from "@/components/shared/Loading";
+import { LuCirclePlus } from "react-icons/lu";
 
 const EmployeesWrapper = () => {
   const [totalCount, setTotalCount] = useState<number>(0);
@@ -65,6 +66,7 @@ const EmployeesWrapper = () => {
     setPage(1); // Reset to first page when changing rows per page
     refetch();
   };
+
   return (
     <div>
       {isLoading ? (
@@ -73,6 +75,11 @@ const EmployeesWrapper = () => {
         </div>
       ) : (
         <>
+          <div className="flex justify-between border-b-2 border-gray-200 p-2 pb-4">
+            <h1 className="text-[20px] font-bold">
+              Total Employees ({userData?.rowCount})
+            </h1>
+          </div>
           <div className="grid grid-cols-1 gap-6 p-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {cardData?.map((employee) => (
               <CardEmployee
