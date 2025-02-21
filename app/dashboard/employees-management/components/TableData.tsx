@@ -483,7 +483,10 @@ export const TableData: React.FC<TableDataProps> = ({
           <div className="dark:text-white">
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>
-                <Button variant="outline" className="gap-2 dark:bg-slate-400">
+                <Button
+                  variant="outline"
+                  className="gap-2 dark:bg-slate-400 dark:hover:bg-slate-300"
+                >
                   Sort
                   <RiExpandUpDownLine className="h-4 w-4" />
                 </Button>

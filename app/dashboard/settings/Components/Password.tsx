@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -24,7 +23,10 @@ const schema = z
       .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
       .regex(/[a-z]/, "Password must contain at least one lowercase letter")
       .regex(/\d/, "Password must contain at least one number")
-      .regex(/[^A-Za-z0-9]/, "Password must contain at least one special character"),
+      .regex(
+        /[^A-Za-z0-9]/,
+        "Password must contain at least one special character",
+      ),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
@@ -56,7 +58,7 @@ const Password = () => {
         let response = await patch<Response>(
           `/users/user/self`,
           {
-            password:data?.password
+            password: data?.password,
           },
           {
             userid: `${session?.user?.userId}`,
@@ -77,7 +79,6 @@ const Password = () => {
       toast.success("Password updated successfully!");
       router.push("/dashboard");
       // router.push("/dashboard/settings");
-      
     },
     onError: (e) => {
       toast.error(e.message);
@@ -93,16 +94,17 @@ const Password = () => {
     }
   };
 
-
-
   return (
     <div className="m-5">
-      <h1 className="text-2xl font-bold mb-2">Password</h1>
-      <p className="text-gray-600 mb-6">Modify your current password</p>
+      <h1 className="mb-2 text-2xl font-bold">Password</h1>
+      <p className="mb-6 text-gray-600">Modify your current password</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Password Field */}
         <div className="mb-4">
-          <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+          <label
+            htmlFor="password"
+            className="mb-2 block font-medium text-gray-700"
+          >
             Password
           </label>
           <div className="relative">
@@ -111,22 +113,33 @@ const Password = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter Password"
               {...register("password")}
-              className="pr-10" // Add padding for the visibility icon
+              className="pr-10 dark:border dark:bg-white"
             />
             <Button
               type="button"
               className="absolute inset-y-0 right-2 flex items-center text-gray-500"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              {showPassword ? (
+                <EyeOff className="h-5 w-5" />
+              ) : (
+                <Eye className="h-5 w-5" />
+              )}
             </Button>
           </div>
-          {errors.password && <span className="text-sm text-red-500">{errors.password.message}</span>}
+          {errors.password && (
+            <span className="text-sm text-red-500">
+              {errors.password.message}
+            </span>
+          )}
         </div>
 
         {/* Confirm Password Field */}
         <div className="mb-6">
-          <label htmlFor="confirmPassword" className="block text-gray-700 font-medium mb-2">
+          <label
+            htmlFor="confirmPassword"
+            className="mb-2 block font-medium text-gray-700"
+          >
             Confirm Password
           </label>
           <div className="relative">
@@ -135,18 +148,24 @@ const Password = () => {
               type={showConfirmPassword ? "text" : "password"}
               placeholder="Confirm Password"
               {...register("confirmPassword")}
-              className="pr-10"
+              className="pr-10 dark:border dark:bg-white"
             />
             <button
               type="button"
               className="absolute inset-y-0 right-2 flex items-center text-gray-500"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
             >
-              {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              {showConfirmPassword ? (
+                <EyeOff className="h-5 w-5" />
+              ) : (
+                <Eye className="h-5 w-5" />
+              )}
             </button>
           </div>
           {errors.confirmPassword && (
-            <span className="text-sm text-red-500">{errors.confirmPassword.message}</span>
+            <span className="text-sm text-red-500">
+              {errors.confirmPassword.message}
+            </span>
           )}
         </div>
 
@@ -155,7 +174,8 @@ const Password = () => {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600"
+            // className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600"
+            className="rounded-md bg-primary-500 px-4 py-2 text-white hover:bg-red-600 focus:outline-none dark:bg-slate-400 dark:hover:bg-slate-300"
           >
             {isSubmitting ? "Updating..." : "Update"}
           </Button>
@@ -166,4 +186,3 @@ const Password = () => {
 };
 
 export default Password;
-

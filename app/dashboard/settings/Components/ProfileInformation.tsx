@@ -335,7 +335,11 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
               <FormItem>
                 <FormLabel>Full Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter full name" {...field} />
+                  <Input
+                    className="dark:border dark:bg-white"
+                    placeholder="Enter full name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -350,7 +354,12 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter email" type="email" {...field} />
+                    <Input
+                      className="dark:border dark:bg-white"
+                      placeholder="Enter email"
+                      type="email"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -365,7 +374,12 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
                 <FormItem>
                   <FormLabel>Phone Number</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter phone" type="tel" {...field} />
+                    <Input
+                      className="dark:border dark:bg-white"
+                      placeholder="Enter phone"
+                      type="tel"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -384,11 +398,11 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
                     value={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="dark:border dark:bg-white">
                         <SelectValue placeholder="Choose" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="dark:border dark:bg-slate-300">
                       <SelectItem value="male">Male</SelectItem>
                       <SelectItem value="female">Female</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
@@ -424,7 +438,7 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
                         </Button>
                       </PopoverTrigger>
                       <PopoverContent
-                        className="w-auto bg-white p-0"
+                        className="w-auto bg-white p-0 dark:bg-slate-400"
                         align="start"
                       >
                         <div className="flex flex-col space-y-4 p-3">
@@ -437,10 +451,12 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
                               }}
                               value={calendarMonth.getMonth().toString()}
                             >
-                              <SelectTrigger className="w-[110px]">
+                              {/* <SelectTrigger className="w-[110px]"> */}
+                              <SelectTrigger className="w-[110px] dark:border dark:bg-slate-400">
                                 <SelectValue placeholder="Month" />
                               </SelectTrigger>
-                              <SelectContent className="bg-white">
+
+                              <SelectContent className="bg-white dark:border dark:bg-slate-400">
                                 {Array.from({ length: 12 }, (_, i) => (
                                   <SelectItem key={i} value={i.toString()}>
                                     {new Date(0, i).toLocaleString("default", {
@@ -461,7 +477,7 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
                               <SelectTrigger className="w-[95px]">
                                 <SelectValue placeholder="Year" />
                               </SelectTrigger>
-                              <SelectContent className="bg-white">
+                              <SelectContent className="bg-white dark:bg-slate-400">
                                 {Array.from({ length: 100 }, (_, i) => (
                                   <SelectItem
                                     key={i}
@@ -504,7 +520,7 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
             <Button
               disabled={form.formState.isSubmitting}
               type="submit"
-              className="rounded-md bg-primary-500 px-4 py-2 text-white hover:bg-red-600 focus:outline-none"
+              className="rounded-md bg-primary-500 px-4 py-2 text-white hover:bg-red-600 focus:outline-none dark:bg-slate-400 dark:hover:bg-slate-300"
             >
               {form.formState.isSubmitting ? "Updating..." : "Update"}
             </Button>

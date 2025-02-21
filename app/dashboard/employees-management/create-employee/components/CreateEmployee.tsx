@@ -518,7 +518,7 @@ export default function CreateEmployee() {
             <Button
               type="button"
               variant="outline"
-              className="dark:bg-slate-400 dark:text-white"
+              className="dark:bg-slate-400 dark:text-white dark:hover:bg-slate-300"
               onClick={handleBackAdmin}
             >
               Cancel
@@ -526,7 +526,7 @@ export default function CreateEmployee() {
             <Button
               type="submit"
               variant="outline"
-              className="rounded-lg bg-primary-500 text-white dark:bg-slate-400"
+              className="rounded-lg bg-primary-500 text-white dark:bg-slate-400 dark:hover:bg-slate-300"
             >
               Create
             </Button>

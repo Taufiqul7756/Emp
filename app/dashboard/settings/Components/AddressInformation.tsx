@@ -178,7 +178,11 @@ const AddressInformation: React.FC<AddressInformationProps> = ({ user }) => {
                 <FormItem>
                   <FormLabel>Street Address*</FormLabel>
                   <FormControl>
-                    <Input placeholder="e.g., 123 Main Street" {...field} />
+                    <Input
+                      className="dark:border dark:bg-white"
+                      placeholder="e.g., 123 Main Street"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -192,7 +196,11 @@ const AddressInformation: React.FC<AddressInformationProps> = ({ user }) => {
                 <FormItem>
                   <FormLabel>Apartment, Suite, Unit (optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="e.g., Apt 4B, Suite 201" {...field} />
+                    <Input
+                      className="dark:border dark:bg-white"
+                      placeholder="e.g., Apt 4B, Suite 201"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -208,7 +216,11 @@ const AddressInformation: React.FC<AddressInformationProps> = ({ user }) => {
                 <FormItem>
                   <FormLabel>City*</FormLabel>
                   <FormControl>
-                    <Input placeholder="e.g., Dhaka" {...field} />
+                    <Input
+                      className="dark:border dark:bg-white"
+                      placeholder="e.g., Dhaka"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -222,16 +234,13 @@ const AddressInformation: React.FC<AddressInformationProps> = ({ user }) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Divisions*</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      value={field.value}
-                    >
+                    <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className="dark:border dark:bg-white">
                           <SelectValue placeholder="Choose your state" />
                         </SelectTrigger>
                       </FormControl>
-                      <SelectContent>
+                      <SelectContent className="dark:border dark:bg-slate-300">
                         {states.map((state) => (
                           <SelectItem key={state} value={state}>
                             {state}
@@ -253,7 +262,11 @@ const AddressInformation: React.FC<AddressInformationProps> = ({ user }) => {
               <FormItem>
                 <FormLabel>ZIP Code*</FormLabel>
                 <FormControl>
-                  <Input placeholder="e.g., 1212" {...field} />
+                  <Input
+                    className="dark:border dark:bg-white"
+                    placeholder="e.g., 1212"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -267,16 +280,13 @@ const AddressInformation: React.FC<AddressInformationProps> = ({ user }) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Country*</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    value={field.value}
-                  >
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="dark:border dark:bg-white">
                         <SelectValue placeholder="Select country" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="dark:border dark:bg-slate-300">
                       <SelectItem value="Bangladesh">Bangladesh</SelectItem>
                     </SelectContent>
                   </Select>
@@ -290,7 +300,7 @@ const AddressInformation: React.FC<AddressInformationProps> = ({ user }) => {
             <Button
               type="submit"
               disabled={form.formState.isSubmitting}
-              className="rounded-md bg-primary-500 px-4 py-2 text-white hover:bg-red-600 focus:outline-none"
+              className="rounded-md bg-primary-500 px-4 py-2 text-white hover:bg-red-600 focus:outline-none dark:bg-slate-400 dark:hover:bg-slate-300"
             >
               {form.formState.isSubmitting ? "Updating..." : "Update"}
             </Button>
@@ -299,6 +309,6 @@ const AddressInformation: React.FC<AddressInformationProps> = ({ user }) => {
       </Form>
     </div>
   );
-}
+};
 
 export default AddressInformation;

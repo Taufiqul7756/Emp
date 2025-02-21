@@ -106,7 +106,7 @@ function BreadcrumbAndTable() {
           </h1>
           <Button
             variant="outline"
-            className="bg-primary-500 text-white dark:bg-slate-400"
+            className="bg-primary-500 text-white dark:bg-slate-400 dark:hover:bg-slate-300"
             onClick={handleCreateNewEmployee}
           >
             <LuCirclePlus />
