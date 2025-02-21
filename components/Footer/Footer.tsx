@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         >
           <span className="text-[15px] text-primary-500">
             {" "}
-            © {new Date().getFullYear()} -brotecs
+            © {new Date().getFullYear()} -Bro Tecs
           </span>
         </Link>
       </div>
