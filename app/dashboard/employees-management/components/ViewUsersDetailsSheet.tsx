@@ -76,7 +76,7 @@ const ViewUsersDetailsSheet: React.FC<ViewProps> = ({ phoneNumber, id }) => {
         </div>
       </SheetTrigger>
 
-      <SheetContent className="w-[600px] max-w-[600px] dark:bg-slate-300">
+      <SheetContent className="w-[400px] max-w-[400px] dark:bg-slate-300">
         {isLoading ? (
           <div className="flex h-full items-center justify-center">
             <Loading />

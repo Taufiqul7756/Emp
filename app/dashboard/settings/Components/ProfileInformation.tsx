@@ -421,7 +421,10 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
                   <div className="space-y-2">
                     <FormLabel>Date of Birth</FormLabel>
                     <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
-                      <PopoverTrigger asChild>
+                      <PopoverTrigger
+                        asChild
+                        className="dark:bg-slate-200 dark:hover:text-slate-700"
+                      >
                         <Button
                           variant="outline"
                           className={cn(
@@ -474,7 +477,7 @@ const ProfileInformation: React.FC<ProfileInformationProps> = ({ user }) => {
                               }}
                               value={calendarMonth.getFullYear().toString()}
                             >
-                              <SelectTrigger className="w-[95px]">
+                              <SelectTrigger className="w-[95px] dark:bg-slate-400">
                                 <SelectValue placeholder="Year" />
                               </SelectTrigger>
                               <SelectContent className="bg-white dark:bg-slate-400">
