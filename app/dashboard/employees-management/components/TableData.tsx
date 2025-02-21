@@ -777,23 +777,24 @@ export const TableData: React.FC<TableDataProps> = ({
       </Dialog>
 
       <Dialog open={shownProfileDelete} onOpenChange={setShownProfileDelete}>
-        <DialogContent className="max-w-lg">
+        <DialogContent className="max-w-lg dark:bg-slate-300">
           <DialogHeader className="relative pb-6 text-center">
             <div className="flex flex-col items-center gap-2">
               <div className="text-center">
                 <h2 className="text-lg font-semibold">
-                  Are you sure delete it.
+                  Are you sure you want to delete?
                 </h2>
               </div>
             </div>
           </DialogHeader>
-
-          {/* <div className="space-y-4">
+          {/* 
+          <div className="space-y-4">
      <p>Are you sure you want to delete?</p>
         </div> */}
           <div className="flex justify-end gap-2">
             <Button
-              className="rounded-md"
+              className="rounded-md dark:bg-slate-400 dark:hover:bg-slate-300"
+              variant="outline"
               onClick={() => setShownProfileDelete(false)}
             >
               Cancel
@@ -806,7 +807,7 @@ export const TableData: React.FC<TableDataProps> = ({
               Archive
             </Button> */}
             <Button
-              className="rounded-md bg-primary-500 text-white"
+              className="rounded-md bg-primary-500 text-white dark:bg-slate-500 dark:hover:bg-slate-300"
               onClick={handleDeleteConfirm}
             >
               Delete Permanently
