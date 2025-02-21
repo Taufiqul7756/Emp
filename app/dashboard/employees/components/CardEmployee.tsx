@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import profileImg from "../../../../public/profile.jpg";
+import ViewUsersDetailsSheet from "./ViewUsersDetailsSheet";
 
 interface Employee {
   id: string;
@@ -75,7 +76,10 @@ const CardEmployee: React.FC<{ employee: Employee }> = ({ employee }) => {
           className="dark:bg-slate-300 dark:text-slate-700 dark:hover:bg-slate-200"
           variant="outline"
         >
-          View
+          <ViewUsersDetailsSheet
+            phoneNumber={employee.phoneNumber}
+            id={employee.id}
+          />
         </Button>
       </CardFooter>
     </Card>

@@ -4,6 +4,7 @@ interface Address {
   thana: string | null;
   zilla: string | null;
   streetAddress: string | null;
+  addressLine1: string | null;
   apartmentNo: string | null;
   city: string | null;
   state: string | null;

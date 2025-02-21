@@ -26,7 +26,7 @@ import { SingleUserType, User } from "../types/employeesType";
 
 interface ViewProps {
   id: string;
-  phoneNumber: number;
+  phoneNumber: string;
 }
 
 export interface ApiResponse<T> {
@@ -72,7 +72,8 @@ const ViewUsersDetailsSheet: React.FC<ViewProps> = ({ phoneNumber, id }) => {
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <div>
-          <IoIosEye className="h-8 w-8 text-gray-600" />
+          {/* <IoIosEye className="h-8 w-8 text-gray-600" /> */}
+          View
         </div>
       </SheetTrigger>
 
