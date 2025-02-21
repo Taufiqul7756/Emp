@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { del } from "@/lib/api/handlers";
+import { useSession } from "next-auth/react";
 
 interface DeleteConfirmationDialogProps {
   selectedId: number;
@@ -33,16 +34,15 @@ const DeleteConfirmationDialog: React.FC<DeleteConfirmationDialogProps> = ({
   page,
   rowsPerPage,
 }) => {
-  // const { data: session } = useSession();
+  const { data: session } = useSession();
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
   const queryClient = useQueryClient();
 
   const deleteMutation = useMutation<DeleteResponse, Error, number>({
     mutationFn: async (selectedId) => {
-      const response = await del<DeleteResponse>(
-        `/users/${selectedId}`
-        // { Authorization: `Bearer ${session?.accessToken}` },
-      );
+      const response = await del<DeleteResponse>(`/users/${selectedId}`, {
+        Authorization: `Bearer ${session?.accessToken}`,
+      });
       if (!response || response.error || response.success === false) {
         throw new Error(response.message || "Failed to delete ads");
       }
@@ -55,7 +55,7 @@ const DeleteConfirmationDialog: React.FC<DeleteConfirmationDialogProps> = ({
         queryKey: ["userdata", page, rowsPerPage],
       });
       toast.success(
-        data.message || `Successfully deleted ${selectedId} ad(s)!`
+        data.message || `Successfully deleted ${selectedId} ad(s)!`,
       );
       onSuccess?.();
       refetch();

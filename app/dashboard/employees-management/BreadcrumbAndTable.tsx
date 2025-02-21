@@ -11,6 +11,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import { UsersManagementApiResponse } from "@/types/Types";
 import { TableData } from "./components/TableData";
+import Loading from "@/components/shared/Loading";
 
 interface PaginatedResponse<T> {
   users: T[];
@@ -111,21 +112,27 @@ function BreadcrumbAndTable() {
             Create Employee
           </Button>
         </div>
-        <TableData
-          data={userData?.data || []}
-          isLoading={isLoading}
-          isError={isError}
-          page={page}
-          pageCount={userData?.pageCount || 0}
-          rowsPerPage={rowsPerPage}
-          onPageChange={handlePageChange}
-          onRowsPerPageChange={handleRowsPerPageChange}
-          refetch={() =>
-            queryClient.invalidateQueries({
-              queryKey: ["userData", page, rowsPerPage],
-            })
-          }
-        />
+        {isLoading ? (
+          <div className="flex items-center justify-center py-10">
+            <Loading />
+          </div>
+        ) : (
+          <TableData
+            data={userData?.data || []}
+            isLoading={isLoading}
+            isError={isError}
+            page={page}
+            pageCount={userData?.pageCount || 0}
+            rowsPerPage={rowsPerPage}
+            onPageChange={handlePageChange}
+            onRowsPerPageChange={handleRowsPerPageChange}
+            refetch={() =>
+              queryClient.invalidateQueries({
+                queryKey: ["userData", page, rowsPerPage],
+              })
+            }
+          />
+        )}
       </div>
     </section>
   );
