@@ -665,7 +665,6 @@ export const TableData: React.FC<TableDataProps> = ({
                   src={singleClientDetails?.profile?.profilePhoto}
                   alt={singleClientDetails?.fullName}
                 />
-                {/* <AvatarImage src=" https://ambufast.sgp1.digitaloceanspaces.com/1734940049656-hasan.jpeg" alt={singleClientDetails?.fullName} /> */}
                 <AvatarFallback>
                   {singleClientDetails?.fullName
                     .split(" ")

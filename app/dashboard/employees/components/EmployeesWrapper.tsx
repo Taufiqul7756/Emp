@@ -25,7 +25,7 @@ const EmployeesWrapper = () => {
       },
     );
     if (!response.success || !response.data) {
-      throw new Error(response.message || "Failed to fetch ambulances");
+      throw new Error(response.message || "Failed to fetch users");
     }
     setTotalCount(response?.data.totalUsers);
     // console.log("response data---users",response?.data.totalOrders);

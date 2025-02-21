@@ -55,7 +55,7 @@ function BreadcrumbAndTable() {
       },
     );
     if (!response.success || !response.data) {
-      throw new Error(response.message || "Failed to fetch ambulances");
+      throw new Error(response.message || "Failed to fetch Users");
     }
     setTotalCount(response?.data.totalUsers);
     // console.log("response data---users",response?.data.totalOrders);
@@ -89,7 +89,7 @@ function BreadcrumbAndTable() {
     refetch();
   };
 
-  // Update the totalCount when ambulanceData changes
+  // Update the totalCount when userData changes
   useEffect(() => {
     setTotalCount(userData?.rowCount || 0);
   }, [userData?.rowCount]);

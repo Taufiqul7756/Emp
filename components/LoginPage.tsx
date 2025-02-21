@@ -97,7 +97,6 @@ const LoginPage: React.FC = () => {
         {/* Top Div */}
         <div className="absolute left-0 right-0 top-[-210px] mt-[230px] grid items-start justify-between gap-5 px-8 md:mt-60 md:flex md:items-center lg:mt-[230px] lg:flex lg:items-center lg:gap-5 xl:mt-[230px] xl:flex xl:items-center xl:gap-0">
           <Image
-            // src="https://ambufast.sgp1.digitaloceanspaces.com/assets/Logo/ambufast-color-logo.png"
             src={logo}
             alt="Company Logo"
             width={240}
@@ -215,7 +214,7 @@ const LoginPage: React.FC = () => {
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black">
             <FaPhoneFlip className="text-xl" />
           </div>
-          <span className="text-xl font-medium">+8801969916999</span>
+          <span className="text-xl font-medium">+8801634139003</span>
         </div>
         {/* Description box */}
         <div className="mb-15 max-w-2xl rounded-lg bg-black/60 p-10 text-center text-white backdrop-blur-sm">
@@ -225,8 +224,7 @@ const LoginPage: React.FC = () => {
             </div>
           </div>
           <p className="text-2xl font-light">
-            AmbuFast is an integrated healthcare platform that combines
-            transportation, diagnostics, and telemedicine.
+            Bro Tecs Employee Management simplifies workforce management.
           </p>
         </div>
       </div>
