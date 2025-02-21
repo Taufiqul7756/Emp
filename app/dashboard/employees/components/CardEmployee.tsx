@@ -69,7 +69,7 @@ const CardEmployee: React.FC<{ employee: Employee }> = ({ employee }) => {
             <span className="font-semibold">Status:</span>
             <span
               className={`rounded-md px-3 py-1 text-sm font-medium ${
-                employee.status === "Active"
+                employee.status === "ACTIVE"
                   ? "border border-green-300 bg-green-100 text-green-700 dark:border-green-500 dark:bg-green-800 dark:text-green-300"
                   : "border border-red-300 bg-red-100 text-red-700 dark:border-red-500 dark:bg-red-800 dark:text-red-300"
               }`}
