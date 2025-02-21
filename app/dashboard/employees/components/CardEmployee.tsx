@@ -30,7 +30,7 @@ const CardEmployee: React.FC<{ employee: Employee }> = ({ employee }) => {
         <img
           src={employee.imageUrl || "/profile.jpg"}
           alt={employee.fullName}
-          className="h-36 w-full object-cover"
+          className="h-36 w-full object-contain"
         />
       </CardHeader>
 
