@@ -99,13 +99,14 @@ function BreadcrumbAndTable() {
       <div className="p-4">
         <Breadcrumb />
       </div>
-      <div className="m-4 rounded-sm bg-white">
+      <div className="m-4 rounded-sm bg-white dark:bg-slate-400">
         <div className="flex justify-between border-b-2 border-gray-200 p-2 pb-4">
-          <h1 className="text-[20px] font-bold">
+          <h1 className="text-[20px] font-bold dark:text-white">
             Total Employees ({userData?.rowCount})
           </h1>
           <Button
-            className="bg-primary-500 text-white"
+            variant="outline"
+            className="bg-primary-500 text-white dark:bg-slate-400"
             onClick={handleCreateNewEmployee}
           >
             <LuCirclePlus />

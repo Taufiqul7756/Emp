@@ -15,7 +15,9 @@ interface BreadcrumbProps {
   className?: string;
 }
 
-export const Breadcrumb = ({ className = "" }: BreadcrumbProps) => {
+export const Breadcrumb = ({
+  className = "dark:text-white",
+}: BreadcrumbProps) => {
   const pathname = usePathname();
 
   const generateBreadcrumbs = () => {
@@ -39,17 +41,17 @@ export const Breadcrumb = ({ className = "" }: BreadcrumbProps) => {
       {breadcrumbs.map((item, index) => (
         <BreadcrumbItem className="text-lg" key={item.href}>
           {item.isLast ? (
-            <BreadcrumbPage className="font-bold text-primary-500">
+            <BreadcrumbPage className="font-bold text-primary-500 dark:text-white">
               {item.label}
             </BreadcrumbPage>
           ) : (
             <BreadcrumbLink asChild>
-              <Link className=" font-bold " href={item.href}>
+              <Link className="font-bold" href={item.href}>
                 {item.label}
               </Link>
             </BreadcrumbLink>
           )}
-          {!item.isLast && <IoIosArrowForward className="mx-2 h-4 w-4  " />}
+          {!item.isLast && <IoIosArrowForward className="mx-2 h-4 w-4" />}
         </BreadcrumbItem>
       ))}
     </BreadcrumbRoot>

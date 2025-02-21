@@ -86,7 +86,7 @@ export default function SideNavbar({
   return (
     <div
       className={cn(
-        "transition-width fixed left-0 top-0 z-10 h-full border-r-[1px] border-[#D4D5D9] bg-white pt-36 shadow-lg duration-300 ease-in-out",
+        "transition-width fixed left-0 top-0 z-10 h-full border-r-[1px] border-[#D4D5D9] bg-white pt-36 shadow-lg duration-300 ease-in-out dark:bg-slate-400",
         isCollapsed
           ? "w-[var(--collapsed-sidebar-width)]"
           : "w-[var(--sidebar-width)]",

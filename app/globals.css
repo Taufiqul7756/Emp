@@ -29,6 +29,37 @@
     /* collapsed sidebar width */
     --collapsed-sidebar-width: 92px;
   }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
+  }
 }
 
 .tox .tox-toolbar__group {
@@ -89,7 +120,6 @@
   }
 }
 
-
 /* Remove autofill background color */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -130,14 +160,12 @@ input:autofill {
   background: lightskyblue;
 }
 
-
-
 @keyframes border-highlight {
   0% {
     border-color: transparent;
   }
   50% {
-    border-color: #F44336;
+    border-color: #f44336;
   }
   100% {
     border-color: transparent;

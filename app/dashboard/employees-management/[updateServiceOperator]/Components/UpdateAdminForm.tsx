@@ -355,6 +355,7 @@ export default function UpdateAdminForm() {
       <Button
         variant="ghost"
         onClick={() => router.push("/dashboard/employees-management")}
+        className="dark:hover:bg-slate-400"
       >
         <ArrowLeft className="mr-2 h-4 w-4" /> Back
       </Button>
@@ -406,7 +407,11 @@ export default function UpdateAdminForm() {
                 <FormItem>
                   <FormLabel>Full Name*</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter the name" {...field} />
+                    <Input
+                      className="dark:bg-white"
+                      placeholder="Enter the name"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -423,7 +428,11 @@ export default function UpdateAdminForm() {
                 <FormItem>
                   <FormLabel>Email*</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter Email" {...field} />
+                    <Input
+                      className="dark:bg-white"
+                      placeholder="Enter Email"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -443,11 +452,11 @@ export default function UpdateAdminForm() {
                     value={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="dark:bg-slate-400 dark:text-white">
                         <SelectValue placeholder="Choose" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="dark:bg-slate-400">
                       <SelectItem value="male">Male</SelectItem>
                       <SelectItem value="female">Female</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
@@ -468,7 +477,11 @@ export default function UpdateAdminForm() {
               <FormItem>
                 <FormLabel>Address Line 1</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Address Line 1" {...field} />
+                  <Input
+                    className="dark:bg-white"
+                    placeholder="Enter Address Line 1"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -481,7 +494,11 @@ export default function UpdateAdminForm() {
               <FormItem>
                 <FormLabel>City</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter City" {...field} />
+                  <Input
+                    className="dark:bg-white"
+                    placeholder="Enter City"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -494,7 +511,11 @@ export default function UpdateAdminForm() {
               <FormItem>
                 <FormLabel>Country</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Country" {...field} />
+                  <Input
+                    className="dark:bg-white"
+                    placeholder="Enter Country"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -507,7 +528,11 @@ export default function UpdateAdminForm() {
               <FormItem>
                 <FormLabel>Zipcode</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Zipcode" {...field} />
+                  <Input
+                    className="dark:bg-white"
+                    placeholder="Enter Zipcode"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -528,7 +553,7 @@ export default function UpdateAdminForm() {
                         type={viewsPassword ? "text" : "password"}
                         placeholder="Enter password"
                         {...field}
-                        className="pr-10"
+                        className="pr-10 dark:bg-white"
                       />
                       <Button
                         type="button"
@@ -557,7 +582,7 @@ export default function UpdateAdminForm() {
                         type={viewsConPassword ? "text" : "password"}
                         placeholder="Confirm password"
                         {...field}
-                        className="pr-10"
+                        className="pr-10 dark:bg-white"
                       />
                       <Button
                         type="button"
@@ -587,11 +612,11 @@ export default function UpdateAdminForm() {
                   value={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="dark:bg-slate-400 dark:text-white">
                       <SelectValue placeholder="Choose" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className="dark:bg-slate-400">
                     <SelectItem value="ACTIVE">ACTIVE</SelectItem>
                     <SelectItem value="INACTIVE">INACTIVE</SelectItem>
                     <SelectItem value="SUSPENDED">SUSPENDED</SelectItem>
@@ -603,12 +628,17 @@ export default function UpdateAdminForm() {
           />
 
           <div className="flex justify-between">
-            <Button type="button" variant="outline" onClick={handleBackTable}>
+            <Button
+              className="dark:bg-slate-300"
+              type="button"
+              variant="outline"
+              onClick={handleBackTable}
+            >
               Cancel
             </Button>
             <Button
               type="submit"
-              className="rounded-lg bg-primary-500 text-white"
+              className="rounded-lg bg-primary-500 text-white dark:bg-slate-300 dark:text-slate-800 dark:hover:bg-slate-200"
             >
               Update
             </Button>

@@ -1,6 +1,6 @@
-import { Breadcrumb } from "@/components/shared/BreadCrumb";
 import React from "react";
 import CreateEmployee from "./components/CreateEmployee";
+import { Breadcrumb } from "@/components/BreadCrumb";
 
 function page() {
   return (

@@ -469,7 +469,7 @@ export const TableData: React.FC<TableDataProps> = ({
   // console.log("profile", singleClientDetails?.profile?.profilePhoto);
 
   return (
-    <>
+    <div className="">
       <div className="w-full p-4">
         <div className="flex items-center justify-between py-4">
           {/* search field */}
@@ -477,20 +477,20 @@ export const TableData: React.FC<TableDataProps> = ({
             placeholder="Search by name"
             // value={search}
             onChange={(event) => handleSearch(event.target.value)}
-            className="max-w-sm bg-white"
+            className="max-w-sm bg-white dark:bg-slate-300"
           />
           {/* ------<Sort />------ */}
-          <div>
+          <div className="dark:text-white">
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>
-                <Button variant="outline" className="gap-2">
+                <Button variant="outline" className="gap-2 dark:bg-slate-400">
                   Sort
                   <RiExpandUpDownLine className="h-4 w-4" />
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-[240px] p-4">
+              <PopoverContent className="w-[240px] p-4 dark:bg-slate-400">
                 <div className="space-y-4">
-                  <div>
+                  <div className="">
                     <h4 className="mb-2 font-medium">Date</h4>
                     <RadioGroup
                       value={sortState.date || ""}
@@ -522,7 +522,7 @@ export const TableData: React.FC<TableDataProps> = ({
                 <div className="mt-4 flex gap-2">
                   <Button
                     variant="outline"
-                    className="flex-1"
+                    className="flex-1 dark:bg-slate-400"
                     onClick={handleReset}
                   >
                     Reset
@@ -531,7 +531,8 @@ export const TableData: React.FC<TableDataProps> = ({
                     disabled={
                       sortState.date === null && sortState.name === null
                     }
-                    className="flex-1 bg-primary-500 text-white"
+                    variant="outline"
+                    className="flex-1 bg-primary-500 text-white dark:bg-red-400"
                     onClick={handleApply}
                   >
                     Apply Now
@@ -542,14 +543,17 @@ export const TableData: React.FC<TableDataProps> = ({
           </div>
         </div>
         {/* Table */}
-        <div className="rounded-none border">
-          <Table>
+        <div className="rounded-none border dark:border-none">
+          <Table className="">
             <TableHeader className="bg-gray-00 rounded-md">
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>
                   {headerGroup.headers.map((header) => {
                     return (
-                      <TableHead key={header.id} className="bg-gray-200">
+                      <TableHead
+                        key={header.id}
+                        className="bg-gray-200 py-4 text-base dark:bg-slate-300 dark:text-slate-600"
+                      >
                         {header.isPlaceholder
                           ? null
                           : flexRender(
@@ -563,7 +567,7 @@ export const TableData: React.FC<TableDataProps> = ({
               ))}
             </TableHeader>
 
-            <TableBody>
+            <TableBody className="">
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
                   <TableRow
@@ -572,7 +576,10 @@ export const TableData: React.FC<TableDataProps> = ({
                     className="hover:bg-red-50"
                   >
                     {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id} className="bg-white">
+                      <TableCell
+                        key={cell.id}
+                        className="bg-white dark:bg-slate-200"
+                      >
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext(),
@@ -603,13 +610,13 @@ export const TableData: React.FC<TableDataProps> = ({
 
           {/* Items Per Page */}
           <div className="flex items-center space-x-3 pr-8">
-            <span className="text-[13px] font-normal leading-[15.6px]">
+            <span className="text-[16px] font-normal leading-[15.6px] dark:text-white">
               Items per page:
             </span>
             <select
               value={rowsPerPage}
               onChange={(e) => onRowsPerPageChange(Number(e.target.value))}
-              className="rounded-md border bg-white px-3 py-2"
+              className="rounded-md border bg-white px-3 py-2 dark:bg-slate-400 dark:text-white"
             >
               {pageSizes.map((size) => (
                 <option key={size} value={size}>
@@ -626,10 +633,11 @@ export const TableData: React.FC<TableDataProps> = ({
               size="sm"
               onClick={() => onPageChange(page - 1)}
               disabled={page === 1}
+              className="dark:bg-slate-400"
             >
-              <FaAngleLeft />
+              <FaAngleLeft className="dark:text-white" />
             </Button>
-            <div className="text-sm font-medium">
+            <div className="text-sm font-medium dark:text-white">
               Page {page} of {pageCount}
             </div>
             <Button
@@ -637,8 +645,9 @@ export const TableData: React.FC<TableDataProps> = ({
               size="sm"
               onClick={() => onPageChange(page + 1)}
               disabled={page === pageCount}
+              className="dark:bg-slate-400"
             >
-              <FaAngleRight />
+              <FaAngleRight className="dark:text-white" />
             </Button>
           </div>
         </div>
@@ -803,6 +812,6 @@ export const TableData: React.FC<TableDataProps> = ({
           </div>
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
 };
