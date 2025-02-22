@@ -38,7 +38,7 @@ const CardEmployee: React.FC<{ employee: Employee }> = ({ employee }) => {
       </CardHeader>
 
       {/* Card Content */}
-      <CardContent className="grid gap-2 p-5">
+      <CardContent className="grid gap-2 px-5 py-2">
         <CardTitle className="text-center text-lg font-semibold text-gray-900 dark:text-white">
           {employee.fullName}
         </CardTitle>
@@ -50,10 +50,10 @@ const CardEmployee: React.FC<{ employee: Employee }> = ({ employee }) => {
         </CardDescription>
 
         {/* Separator for better visual structure */}
-        <Separator className="my-3 bg-gray-300 dark:bg-white" />
+        <Separator className="my-1 bg-gray-300 dark:bg-white" />
 
         {/* Role & Status Section */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2">
           {/* Role */}
           <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
             <MdWork className="text-lg text-gray-500 dark:text-white" />
