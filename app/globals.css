@@ -62,6 +62,31 @@
   }
 }
 
+/* Autofill styles for light mode */
+input:-webkit-autofill {
+  -webkit-text-fill-color: hsl(var(--foreground)) !important;
+  background-color: transparent !important;
+  caret-color: hsl(var(--foreground)) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Autofill styles for dark mode */
+.dark input:-webkit-autofill {
+  -webkit-text-fill-color: hsl(var(--primary-foreground)) !important;
+  background-color: transparent !important;
+  caret-color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Ensure manually typed text is always the correct color */
+.dark input {
+  color: hsl(var(--primary-foreground)) !important;
+}
+/* Fix autofill text turning white on hover in dark mode */
+.dark input:-webkit-autofill:hover {
+  -webkit-text-fill-color: hsl(var(--primary-foreground)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
 .tox .tox-toolbar__group {
   pointer-events: auto;
 }
